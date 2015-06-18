@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default">
+
+<header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="flex-container">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+            {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+        </div>
+    </div>
+</header>
+
+<div class="canvas">
+    <div class="main wrapper clearfix">
+        {{zone('main')|raw}}
+    </div>
+</div>
+
+<footer class="bk-footer">
+    <div class="wrapper clearfix">
+        {{widget('content', 'footercolumn1content1', {"content":"<p>CONTACTOS</p>"})|raw}}        
+        {{widget('content', 'footercolumn1content2', {"content":"<h2>LOREM IPSUM ALAM YOU?</h2>"})|raw}}       
+        {{widget('profile', 'footercolumn1profileEmail', { 'profileType':'email', 'email':'profile'})|raw}}
+        {{widget('profile', 'footercolumn1profilePhone', { 'profileType':'phone', 'phone':'profile'})|raw}} 
+    </div>
+</footer>
+
+</div>
+
+{% endblock %}
