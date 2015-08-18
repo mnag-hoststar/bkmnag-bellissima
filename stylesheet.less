@@ -77,9 +77,6 @@ header.bk-header {
   width: 100%;
   bottom: 0px;
   background-color: @color-swatch7;
-  @media @tablet {
-    box-shadow: 0 -3px 3px hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(lighten(@color-swatch7,10%)), 0.2); 
-  }
 }
 
 // Company Name
@@ -161,7 +158,6 @@ footer.bk-footerp {
   top: 15px;
   &:after {
     background-color: @color-swatch1;
-    box-shadow: 0 6px 0 @color-swatch1, 0 12px 0 @color-swatch1;
     width: 21px;
   }
 }
@@ -1242,7 +1238,7 @@ footer.bk-footer .widget.socialicons span a, footer.bk-footer .widget.profile .b
 						padding: 15px;
 						background-color: lighten(@color-swatch2,70%);
 
-	                	@media @desktop {
+	                	@media @tablet {
 	                		max-width: 600px;
 	                		margin: 0 auto;
 	                	}
