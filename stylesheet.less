@@ -67,9 +67,12 @@ header.bk-header {
 // Company Header
 
 .companyheader {
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
-	float: left;
+	width: 19%;
+	@media @tablet {
+		width: 90%;
+	}
 }
 
 // Company Name
@@ -113,7 +116,7 @@ footer.bk-footer h2 {
 	border-bottom: 0;
 }
 
-footer.bk-footerp {
+footer.bk-footer p {
 	letter-spacing: 2px;
 	font-size: bkscale(@font-swatch5-font-size,0.75);
 	color: lighten(@color-swatch5,10%);
@@ -125,9 +128,9 @@ footer.bk-footerp {
 	 =============================== */
 
 .widget.extendednavigation {
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
-	float: right;
+	width: 80%;
 	li.selected a span {
 		border-bottom: 1px solid white;
 		padding-bottom: 5px;
