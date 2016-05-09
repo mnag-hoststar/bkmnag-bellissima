@@ -103,7 +103,7 @@
             "font-family": "\"Futura\", Helvetica, sans-serif",
             "font-size": "16px",
             "font-weight": "300",
-            "line-height": "28px",
+            "line-height": "34px",
             "color": "@color-swatch6",
             "color-hover": "@color-swatch3",
             "letter-spacing": "inherit",

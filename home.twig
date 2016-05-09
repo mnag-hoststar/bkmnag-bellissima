@@ -3,24 +3,22 @@
 {% block content %}
 
 <section>
-    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"LOREM IPSUM","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"GO TO GALLERY","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
     <div class="header-wrapper clearfix">
         <header class="bk-header">
             <div class="wrapper clearfix">
-                <div class="flex-container">
+                <div class="companyheader">
                     {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
                     {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-                    {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
                 </div>
+                {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
             </div>
         </header>
     </div>
 </section>
 
-<div class="canvas">
-    <div class="main wrapper clearfix">
-        {{zone('main')|raw}}
-    </div>
+<div class="main wrapper clearfix">
+    {{zone('main')|raw}}
 </div>
 
 <footer class="bk-footer">
