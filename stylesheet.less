@@ -67,7 +67,9 @@ header.bk-header {
 // Company Header
 
 .companyheader {
-	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+	float: left;
 }
 
 // Company Name
@@ -123,12 +125,9 @@ footer.bk-footerp {
 	 =============================== */
 
 .widget.extendednavigation {
-	position: absolute;
-	right: 0;
-	display: inline-block;
-	@media @tablet {
-		position: relative;
-	}
+	display: table-cell;
+	vertical-align: middle;
+	float: right;
 	li.selected a span {
 		border-bottom: 1px solid white;
 		padding-bottom: 5px;
