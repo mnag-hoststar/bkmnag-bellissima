@@ -1,7 +1,7 @@
 {
     "name":"Bellissima",
-    "thumbnail":"bellissima.png",
-    "screenshot":"bellissima.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"bellissima-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
