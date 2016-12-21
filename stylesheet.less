@@ -595,24 +595,23 @@ hr.line.align-right {
 		color:    lighten(@color-swatch5,10%);
 }
 
-
-.widget.contactform fieldset button.btn {
-		margin: 0;
-		width: 100px;
-		padding: 10px 20px;
-		background-color: @font-swatch7-background-color;
-		font-family: @font-swatch7-font-family;
-		font-weight:@font-swatch7-font-weight;
-		line-height: @font-swatch7-line-height;
-		letter-spacing: @font-swatch7-letter-spacing;
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
-		font-size: @font-swatch7-font-size;
-		text-decoration: none;
-		text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
-		@media @mobile {
-				width: 100%;
-		}
+.contactform button, .contactform button.btn, .advancedcontactform button, .advancedcontactform button.btn {
+	margin: 0;
+	width: 100px;
+	padding: 10px 20px;
+	background-color: @font-swatch7-background-color;
+	font-family: @font-swatch7-font-family;
+	font-weight:@font-swatch7-font-weight;
+	line-height: @font-swatch7-line-height;
+	letter-spacing: @font-swatch7-letter-spacing;
+	background-color: @font-swatch7-background-color;
+	color: @font-swatch7-color;
+	font-size: @font-swatch7-font-size;
+	text-decoration: none;
+	text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
+	@media @mobile {
+		width: 100%;
+	}
 }
 	
 .widget.contactform fieldset button.btn:hover {
