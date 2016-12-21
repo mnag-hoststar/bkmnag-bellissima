@@ -1167,6 +1167,27 @@ footer.bk-footer .widget.socialicons span a, footer.bk-footer .widget.profile .b
 		}
 }
 
+select {
+	height: 35px;
+	margin: 0 4px 10px;
+	padding: 8px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border: 1px solid darken(@color-swatch1,10%);
+	background-color: darken(@color-swatch1,4%);
+	text-indent: 0.01px;
+	text-overflow: '';
+	color: darken(@color-swatch5,5%);
+	cursor: pointer;
+	&:focus {
+		outline: 0;
+	}
+	@media @mobile {
+		width: 100%;
+	}
+}
+
 // Product Filter
 // -----------------------------
 
