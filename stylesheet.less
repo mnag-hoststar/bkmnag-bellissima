@@ -45,7 +45,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.feature + .header-wrapper {
 	position: relative;
-	z-index: 9999;
+	z-index: 99999;
 	.bk-header {
 		background-color: fade(@color-swatch7, 80%); 
 		position: absolute;
@@ -527,64 +527,57 @@ hr.line.align-right {
 	 CONTACT FORM WIDGET
 	 =============================== */
 
-.widget.contactform form {
-		display: block;
-		padding: 0px;
-		margin: 0 0 30px;
+.form-group {
+	margin-bottom: 1em;
 }
 
-.widget.contactform fieldset {
-		border: none;
-		padding: 0;
-		margin: 0;
+.contactform label, .advancedcontactform label {
+	margin-bottom: 5px;
+	font-family: @font-swatch4-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	color: @font-swatch5-color;
+	line-height: @font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.contactform fieldset label {
-		float: left;
-		width: 100%;
-		margin-bottom: 3px;
-		font-family: @font-swatch4-font-family;
-		font-size: @font-swatch5-font-size;
-		font-weight: @font-swatch5-font-weight;
-		color: @font-swatch5-color;
-		line-height: @font-swatch5-line-height;
-		letter-spacing: @font-swatch5-letter-spacing;
-}
-
-.widget.contactform fieldset input {
-		width: 100%;
-		height: 50px;
-		padding: 0;
-		background-color: @color-swatch2;
-		font-family: @font-swatch5-font-family;
-		font-size: @font-swatch5-font-size;
-		color: @font-swatch5-color;
-		text-indent: 12px;
-		margin: 10px 0 20px;
-		border: 1px solid darken(@color-swatch2, 10%);
-}
-
-.widget.contactform fieldset textarea {
-		height: 100px;
-		width: 100%;
-		background-color: @color-swatch2;
-		border: 1px solid darken(@color-swatch2, 10%);
-		font-family: @font-swatch5-font-family;
-		font-size: @font-swatch5-font-size;
-		color: @font-swatch5-color;
-		text-indent: 12px;
-		padding: 10px 0px 0px 0px;
-		margin: 10px 0 20px;
-		resize: none;
-}
-
-.widget.contactform fieldset input:hover, .widget.contactform fieldset textarea:hover {
+.contactform input, .advancedcontactform input {
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	background-color: @color-swatch2;
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
+	text-indent: 12px;
+	border: 1px solid darken(@color-swatch2, 10%);
+	&:hover {
 		border: 1px solid darken(@color-swatch2, 20%);
-}
-
-.widget.contactform fieldset input:focus, .widget.contactform fieldset textarea:focus {
+	}
+	&:focus {
 		outline: none;
 		border: 1px solid darken(@color-swatch2, 25%);
+	}
+}
+
+.contactform textarea, .advancedcontactform textarea {
+	height: 100px;
+	width: 100%;
+	background-color: @color-swatch2;
+	border: 1px solid darken(@color-swatch2, 10%);
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
+	text-indent: 12px;
+	padding: 10px 0px 0px 0px;
+	resize: none;
+	&:hover {
+		border: 1px solid darken(@color-swatch2, 20%);
+	}
+	&:focus {
+		outline: none;
+		border: 1px solid darken(@color-swatch2, 25%);
+	}
 }
 
 /* PLACEHOLDER CSS */
