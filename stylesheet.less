@@ -44,6 +44,22 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	 HEADER
 	 =============================== */
 
+
+header.bk-header {
+  min-height: 85px;
+
+  .flex-container {
+    @media @tablet {
+      -webkit-box-align: initial;
+      -webkit-align-items: initial;
+      -ms-flex-align: initial;
+      -ms-grid-row-align: initial;
+      align-items: initial;
+      position: relative;
+    }
+  }
+}
+
 .widget.feature + .header-wrapper {
 	position: relative;
 	z-index: 99999;
@@ -65,30 +81,20 @@ header.bk-header, .widget.feature.bk-tpl-hidden + .header-wrapper header.bk-head
 	background-color: @color-swatch7;
 }
 
-// Company Header
-
-.companyheader {
-	display: inline-block;
-	vertical-align: middle;
-	width: 19%;
-	@media @tablet {
-		width: 90%;
-	}
-}
 
 // Company Name
 .widget.companyname a {
-	word-break: normal;
+	word-break: break-word;
 }
 
 // Logo
 .widget.logo {
-	margin-right: 10px;
+	padding-right: 10px;
 }
 
 .widget {
 	&.logo, &.companyname {
-		display: inline-block;
+		display: table-cell;
 		vertical-align: middle;
 	}
 }
