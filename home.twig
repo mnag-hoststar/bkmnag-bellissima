@@ -7,11 +7,13 @@
     <div class="header-wrapper clearfix">
         <header class="bk-header">
             <div class="wrapper clearfix">
-                <div class="companyheader">
-                    {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                <div class="flex-container">
+                    <div class="brand">
+                        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+                        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                    </div>
+                    {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
                 </div>
-                {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
             </div>
         </header>
     </div>

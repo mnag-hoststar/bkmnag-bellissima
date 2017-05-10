@@ -3,6 +3,7 @@
 	 =============================== */
 
 @import "@{templateCommon}/basekit-bootstrap.less";
+@import "@{templateLocal}/css/layout-header.less";
 
 
 /* ===============================
@@ -57,7 +58,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-header.bk-header {
+header.bk-header, .widget.feature.bk-tpl-hidden + .header-wrapper header.bk-header {
 	padding: 15px 0;
 	position: relative;
 	width: 100%;
@@ -130,7 +131,7 @@ footer.bk-footer p {
 .widget.extendednavigation {
 	display: inline-block;
 	vertical-align: middle;
-	width: 80%;
+	//width: 80%;
 	li.selected a span {
 		border-bottom: 1px solid white;
 		padding-bottom: 5px;
@@ -143,9 +144,12 @@ footer.bk-footer p {
 }
 
 .widget.extendednavigation a.pull {
-	top: -25px;
+	top: -36px;
 	&:after {
-		height: 2px;
+		top: 10px;
+		height: 3px;
+		background: @font-swatch6-color;
+		box-shadow: 0 8px 0 @font-swatch6-color, 0 16px 0 @font-swatch6-color;
 	}
 }
 

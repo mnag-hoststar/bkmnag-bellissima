@@ -6,11 +6,11 @@
 
 <header class="bk-header">
     <div class="wrapper clearfix">
-        <div class="companyheader">
+        <div class="flex-container">
             {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
             {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+            {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
         </div>
-        {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
     </div>
 </header>
 
