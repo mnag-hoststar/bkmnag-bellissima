@@ -12,8 +12,8 @@
 
 
 .wrapper {
-	width: 90%;
 	max-width: 1600px;
+	width: 90%;
 	margin: 0 auto;
 	position: relative;
 }
@@ -62,7 +62,7 @@ header.bk-header {
 
 .widget.feature + .header-wrapper {
 	position: relative;
-	z-index: 99999;
+	z-index: 10000;
 	.bk-header {
 		background-color: fade(@color-swatch7, 80%); 
 		position: absolute;
@@ -128,6 +128,313 @@ footer.bk-footer p {
 	font-size: bkscale(@font-swatch5-font-size,0.75);
 	color: lighten(@color-swatch5,10%);
 	line-height:@font-swatch5-line-height;
+}
+
+/* ===============================
+   Language Selector
+   =============================== */
+
+@language-padding: 0.5em;
+@language-line-height: @font-swatch7-line-height;
+
+// General styles
+
+.language-selector {
+	&.language-selector--horizontal,
+	&.language-selector--dropdown {
+		z-index: 10100;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+		box-sizing: content-box;
+		width: auto;
+	}
+
+	&.language-selector--light {
+		background-color: @color-swatch1;
+		
+		@media @mobile {
+  			box-shadow: none;
+		}
+	}
+	&.language-selector--dark {
+		background-color: fade(@color-swatch7, 80%);
+		
+		@media @mobile {
+  			box-shadow: none;
+		}
+	}
+	
+	&.language-selector--dropdown {
+	    height: auto;
+		text-align: left;
+	}
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	font-family: @font-swatch7-font-family;
+    	font-size: @font-swatch7-font-size;
+    	font-weight: @font-swatch7-font-weight;
+    	line-height: @language-line-height;
+    	letter-spacing: @font-swatch7-letter-spacing;
+    	color: @font-swatch7-color;
+    }
+}
+	
+// Inner
+
+.language-selector__inner {
+    .language-selector & {
+	    box-sizing: content-box;
+    	padding: @language-padding;
+    	max-width: 1600px;
+    	width: 90%;
+    	margin: 0 auto;
+    }
+    
+    .language-selector.language-selector--horizontal & {
+    	padding: @language-padding*2 @language-padding 0;
+    }
+
+	.language-selector.language-selector--dropdown & {
+    	padding: @language-padding*2 @language-padding;
+    	width: 90%;
+    	
+    	&:before {
+    	    content: "";
+            display: block;
+    	    height: @language-line-height;
+    	}
+    	&:after {
+    	    content: "";
+            display: block;
+    	    height: @language-padding*2;
+    	}
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+	
+// List
+
+.language-selector__list {
+    .language-selector & {
+	    min-width: auto;
+    }
+	
+	.language-selector.language-selector--dropdown & {
+		box-sizing: border-box;
+		margin: @language-padding*2 @language-padding;
+		min-width: auto;
+	    max-width: ~"calc(100% - 1em)";
+        
+        @media @tablet {
+		    margin: 0;
+		    padding: @language-padding*2 @language-padding;
+	    	max-width: 100%;
+        }
+		
+		@media @mobile {
+			width: 100%;
+		    padding: @language-padding*2 5%;
+		}
+	}
+}
+	
+// Item
+
+.language-selector__item {
+	.language-selector.language-selector--light &,
+	.language-selector.language-selector--dark & {
+		cursor: pointer;
+	    position: relative;
+		border: none;
+		background-color: transparent;
+		width: auto;
+		max-width: 100%;
+		-webkit-transition: .2s;
+        -moz-transition: .2s;
+        -ms-transition: .2s;
+        transition: .2s;
+		
+		.language-selector--horizontal& {
+		    margin: 0 0 @language-padding*2 @language-padding;
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			background-color: @font-swatch7-background-color;
+			
+			&:hover {
+				background-color: @font-swatch7-background-color-hover;
+			}
+			
+			&--current {
+				background-color: darken(@font-swatch7-background-color-hover, 20%);
+			    
+				&:hover {
+					background-color: @font-swatch7-background-color-hover;
+				}
+			}
+		}
+	}
+	.language-selector.language-selector--dropdown & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&, &--current {
+				background-color: @font-swatch7-background-color;
+				
+				&:hover {
+					background-color: @font-swatch7-background-color-hover;
+				}
+			}
+		}
+	}
+	
+	// Current Item
+	
+	&--current {
+	    &:before {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: -1px;
+        		margin-top: -(@language-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @language-line-height/2;
+        	    font-size: fade(@color-swatch7, 20%);
+        		color: fade(@color-swatch7, 20%);
+        		text-align: center;
+    		}
+	    }
+	    &:after {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: 0;
+        		margin-top: -(@language-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @language-line-height/2;
+        	    font-size: @font-swatch7-font-size;
+        		color: @font-swatch7-color;
+        		text-align: center;
+    		}
+	    }
+	}
+}
+
+// Link
+
+.language-selector__link {
+	.language-selector & {
+		box-sizing: border-box;
+		padding: 0 @language-padding*2;
+		border: none;
+		hyphens: auto;
+	}
+	
+	// Horizontal - Item
+	
+	.language-selector.language-selector--horizontal & {
+		text-align: right;
+		display: inline-block;
+	}
+	
+	// Dropdown - Item
+	
+	.language-selector.language-selector--dropdown & {
+		padding-right: @language-padding*4;
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--dropdown &,
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&,
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Icon
+
+.language-selector__icon {
+	.language-selector & {
+		margin-right: 0;
+		padding: @language-padding 0;
+		min-height: @language-line-height;
+		box-sizing: content-box;
+		line-height: @language-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
+	.language-selector.language-selector--dropdown.language-selector--flag-text & {
+		float: left;
+		box-sizing: border-box;
+		line-height: @language-line-height;
+	}
+}
+
+// Name
+
+.language-selector__name,
+.language-selector__localised-name {
+	.language-selector & {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
+	}
+	
+	.language-selector & {
+	    text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
+	}
+	
+	.language-selector.language-selector--flag-text & {
+		display: inline-block;
+		padding: @language-padding 0 @language-padding @language-padding;
+	}
+	.language-selector.language-selector--text &,
+	.language-selector.language-selector--flag & {
+		padding: @language-padding 0;
+	}
+	.language-selector.language-selector--text & {
+		display: block;
+	}
+	
+	.language-selector.language-selector--dropdown & {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		.language-selector--flag-text& {
+			@media only screen and (max-width: 380px) {
+				display: none;
+			}
+		}
+	}
 }
 
 /* ===============================
@@ -252,15 +559,21 @@ footer.bk-footer p {
 		}
 }
 
+/* FEATURE WIDGET OVERLAY */
+
+.widget.feature .widget-overlay .widget__list {
+    top: 50%;
+}
+
 /* FEATURE TITLE */
 
 .widget.feature h2 {
 		display: inherit;
 		padding-bottom: 0;
 		span {
-				background-color: fade(@color-swatch7, 80%);
-				padding: 10px;
-				text-shadow: 0px 2px 1px fade(@color-swatch7, 50%);
+			background-color: fade(@color-swatch7, 80%);
+			padding: 10px;
+			text-shadow: 0px 2px 1px fade(@color-swatch7, 50%);
 		}
 }
 
@@ -603,7 +916,10 @@ hr.line.align-right {
 		color:    lighten(@color-swatch5,10%);
 }
 
-.contactform button, .contactform button.btn, .advancedcontactform button, .advancedcontactform button.btn {
+.contactform button,
+.contactform button.btn,
+.advancedcontactform button,
+.advancedcontactform button.btn {
 	margin: 0;
 	width: 100px;
 	padding: 10px 20px;
@@ -2192,13 +2508,6 @@ select {
 	}
 
 }
-
-/* @media only screen and (min-width: 1140px) {
-	.wrapper {
-		width: 960px;
-		margin: 0 auto;
-	}
-} */
 
 .clearfix:before,
 .clearfix:after {
