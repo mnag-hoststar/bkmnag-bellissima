@@ -130,6 +130,19 @@ footer.bk-footer p {
 	line-height:@font-swatch5-line-height;
 }
 
+.gdpr-footer {
+    background-color: @color-swatch7;
+    
+    .gdpr-footer__link {
+		color: @color-swatch3;
+		
+		&:hover, &:active {
+			text-decoration: none;
+			color: darken(@color-swatch5, 5%);
+		}
+    }
+}
+
 /* ===============================
    Language Selector
    =============================== */
@@ -788,7 +801,6 @@ hr.line.align-right {
 }
 
 .widget.clicktocall a {
-	
 	font-family: @font-swatch5-font-family;
 	font-weight:@font-swatch5-font-weight;
 	color: @font-swatch5-color;
