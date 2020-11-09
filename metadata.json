@@ -3,6 +3,7 @@
     "thumbnail":"thumbnail.png",
     "screenshot":"bellissima-screenshot.jpg",
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
     "en": ["fullscreen", "dark", "photography", "modern", "stylish", "agency", "magazine", "creative", "elegant", "professional", "sophisticated", "media", "sans-serif"],
