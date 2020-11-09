@@ -440,6 +440,59 @@ footer.bk-footer p {
 }
 
 
+/* ===========================
+	TYPOGRAPHY
+   ======================== */
+
+ h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"], label {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+h5, h6 {
+	font-family: @font-swatch4-font-family; 
+	font-size: @font-swatch4-font-size;
+	line-height: @font-swatch4-line-height;
+}
+
+p, ul, ol, li, .contentgroup__body, .widget.clicktocall a {
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
+}
+
+[data-name*="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
 /* ===============================
 	 EXTENDED NAVIGATION
 	 =============================== */
@@ -629,7 +682,8 @@ footer.bk-footer p {
 .ecom-product-go-to-checkout-btn,
 .ecom-product-add-to-cart-btn,
 .ecombasket-pull,
-.basket-summary-submit {
+.basket-summary-submit,
+a.contentgroup__link {
 	margin: 20px 0;
 	padding: 10px 20px;
 	background-color: @font-swatch7-background-color;
@@ -642,18 +696,49 @@ footer.bk-footer p {
 	color: @font-swatch7-color;
 	text-decoration: none;
 	text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
-}
 
-.widget.button button:hover {
-	background-color: @font-swatch7-background-color-hover;
-	cursor: pointer;
+	.style--light & {
+		background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+        color: @contrast--dark;
+        text-shadow: 0px 1px 1px darken(@color--dark, 20%);
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
+    &:hover {
+    	background-color: @font-swatch7-background-color-hover;
+		cursor: pointer;
+
+    	.style--light & {
+			background-color: darken(@color--accent, 5%);
+	    }
+
+	    .style--accent & {
+	    	background-color: darken(@color--dark, 5%);
+	    }
+
+	    .style--dark & {
+	    	background-color: darken(@color--accent, 5%);
+	    }
+    }
 }
 
 .widget.button,
 .widget.paypalbuynow,
 .widget.tweet,
 .widget.dropbox,
-.widget.clicktocall {
+.widget.clicktocall,
+.contentgroup__link {
 	margin: 0;
 }
 
@@ -702,11 +787,58 @@ footer.bk-footer p {
 blockquote {
 	background-color: @color-swatch2;
 	font-style: italic;
+
+	.style--light & {
+		background-color: darken(@color--light, 5%);
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--accent, 5%);
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--dark, 5%);
+    }
+
 	&:before {
 		display: none;
 	}
 }
 
+blockquote,
+blockquote p {
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
+/* ===============================
+	IMAGE
+	=============================== */
+
+.widget.image .image-title,
+.widget.image .image-description {
+	.style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
 
 /* ===============================
 	GALLERY
@@ -748,15 +880,20 @@ blockquote {
 	
 	// Image Data
 	
-	.image-data {
-		display: block;
+	.inner .image-data {
+		.align-items(center);
+		.flex-display;
+		.flex-direction(column);
+		.justify-content(center);
 		opacity: 0;
 		background-color: darken(@color-swatch3, 10%);
+		text-align: center;
 		-webkit-transition: all 0.4s ease-out;
 		-moz-transition: all 0.4s ease-out;
 		-o-transition: all 0.4s ease-out;
 		transition: all 0.4s ease-out;
 		&:hover {
+			.flex-display;
 			opacity: 1;
 		}
 	}
@@ -776,6 +913,18 @@ hr.line {
 	height: 1px;
 	width: 100%;
 	border: none;
+
+	.style--light & {
+		background-color: darken(@color--light, 20%);
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--accent, 20%);
+    }
+
+    .style--dark & {
+    	background-color: lighten(@color--dark, 20%);
+    }
 }
 
 hr.line.align-left {
@@ -818,17 +967,42 @@ hr.line.align-right {
 }
 
 .widget.twitter a,
+.widget.twitter p,
 .widget.twitter span,
 .widget.twitter time {
 	font-family: @font-swatch4-font-family;
 	color: @color-swatch5;
 	text-decoration: none;
-	font-size: 12px
+	font-size: 12px;
+
+	.style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
 }
 
 .widget.twitter a {
 	font-size: 12px;
 	color: lighten(@color-swatch3, 15%);
+
+	.style--light & {
+        color: lighten(@color--accent, 15%);
+    }
+
+    .style--accent & {
+        color: lighten(@contrast--accent, 15%);
+    }
+
+    .style--dark & {
+        color: lighten(@color--accent, 15%);
+    }
 }
 
 .widget.twitter .twitter-content p a {
@@ -836,14 +1010,42 @@ hr.line.align-right {
 	color: @font-swatch5-color;
 	font-size: @font-swatch5-font-size;
 	letter-spacing: @font-swatch5-letter-spacing;
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
-.widget.twitter ul li {
+.widget.twitter .twitter li {
 	background-color: @color-swatch2;
 	padding: 25px;
 	width: 100%;
 	margin-bottom: 30px;
 	border: 1px solid darken(@color-swatch2, 10%);
+
+	.style--light & {
+        background-color: darken(@color--light, 2%);
+        border-color: darken(@color--light, 10%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 2%);
+        border-color: darken(@color--accent, 10%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--dark, 2%);
+        border-color: lighten(@color--dark, 10%);
+    }
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -854,6 +1056,18 @@ hr.line.align-right {
 	font-size: bkscale(@font-swatch4-font-size, 0.9);
 	font-weight: @font-swatch4-font-weight;
 	color: @color-swatch3;
+
+	.style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 
@@ -874,6 +1088,19 @@ hr.line.align-right {
 	color: @font-swatch5-color;
 	line-height: @font-swatch5-line-height;
 	letter-spacing: @font-swatch5-letter-spacing;
+	word-break: break-word;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 .contactform input,
@@ -887,12 +1114,55 @@ hr.line.align-right {
 	color: @font-swatch5-color;
 	text-indent: 12px;
 	border: 1px solid darken(@color-swatch2, 10%);
+
+	.style--light & {
+		background-color: darken(@color--light, 5%);
+		border-color: darken(@color--light, 15%);
+		color: @contrast--light;
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--light, 5%);
+    	border-color: darken(@color--accent, 15%);
+    	color: @contrast--light;
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--light, 5%);
+    	border-color: lighten(@color--dark, 15%);
+    	color: @contrast--light;
+    }
+
 	&:hover {
 		border: 1px solid darken(@color-swatch2, 20%);
+
+		.style--light & {
+			border-color: darken(@color--light, 25%);
+	    }
+
+	    .style--accent & {
+	    	border-color: darken(@color--accent, 25%);
+	    }
+
+	    .style--dark & {
+	    	border-color: lighten(@color--dark, 25%);
+	    }
 	}
 	&:focus {
 		outline: none;
 		border: 1px solid darken(@color-swatch2, 25%);
+
+		.style--light & {
+			border-color: darken(@color--light, 30%);
+	    }
+
+	    .style--accent & {
+	    	border-color: darken(@color--accent, 30%);
+	    }
+
+	    .style--dark & {
+	    	border-color: lighten(@color--dark, 30%);
+	    }
 	}
 }
 
@@ -908,12 +1178,56 @@ hr.line.align-right {
 	text-indent: 12px;
 	padding: 10px 0px 0px 0px;
 	resize: none;
+
+	.style--light & {
+		background-color: darken(@color--light, 5%);
+		border-color: darken(@color--light, 15%);
+		color: @contrast--light;
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--light, 5%);
+    	border-color: darken(@color--accent, 15%);
+    	color: @contrast--light;
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--light, 5%);
+    	border-color: lighten(@color--dark, 15%);
+    	color: @contrast--light;
+    }
+
 	&:hover {
 		border: 1px solid darken(@color-swatch2, 20%);
+
+		.style--light & {
+			border-color: darken(@color--light, 25%);
+	    }
+
+	    .style--accent & {
+	    	border-color: darken(@color--accent, 25%);
+	    }
+
+	    .style--dark & {
+	    	border-color: lighten(@color--dark, 25%);
+	    }
 	}
+
 	&:focus {
 		outline: none;
 		border: 1px solid darken(@color-swatch2, 25%);
+
+		.style--light & {
+			border-color: darken(@color--light, 30%);
+	    }
+
+	    .style--accent & {
+	    	border-color: darken(@color--accent, 30%);
+	    }
+
+	    .style--dark & {
+	    	border-color: lighten(@color--dark, 30%);
+	    }
 	}
 }
 
@@ -957,6 +1271,25 @@ hr.line.align-right {
 	font-size: @font-swatch7-font-size;
 	text-decoration: none;
 	text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
+
+	.style--light & {
+		background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+        color: @contrast--dark;
+        text-shadow: 0px 1px 1px darken(@color--dark, 20%);
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
 	@media @mobile {
 		width: 100%;
 	}
@@ -965,6 +1298,18 @@ hr.line.align-right {
 .widget.contactform fieldset button.btn:hover {
 	background-color: @font-swatch7-background-color-hover;
 	cursor: pointer;
+
+	.style--light & {
+		background-color: darken(@color--accent, 5%);
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--dark, 5%);
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--accent, 5%);
+    }
 }
 
 .widget.contactform fieldset button.btn:active {
@@ -1026,22 +1371,73 @@ hr.line.align-right {
             font-size: @font-swatch7-font-size;
 			font-weight:@font-swatch7-font-weight;
 			letter-spacing: @font-swatch7-letter-spacing;
+			word-break: break-word;
+
+			.style--light & {
+		        color: @contrast--light;
+		    }
+
+		    .style--accent & {
+		        color: @contrast--accent;
+		    }
+
+		    .style--dark & {
+		        color: @contrast--dark;
+		    }
 		}
 	}
 }
 
-/* ===============================
-	 DROPBOX WIDGET
+/* ====================================
+	 DROPBOX, PAYPAL, PDF, TWEET, BLOG
 	 =============================== */
 
-.widget.dropbox .b-wrap .btn {}
+.widget.dropbox .b-wrap .btn,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload .btn,
+.widget.tweet a.tweet-link,
+.widget.socialicons span a,
+.blog-list-footer a,
+.productlist-search .btn {
 
+	.style--light & {
+		background-color: @color--accent;
+		border: none;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
 
-/* ===============================
-	 PAYPAL BUTTON
-	 =============================== */
+    .style--accent & {
+    	background-color: @color--dark;
+    	border: none;
+        color: @contrast--dark;
+        text-shadow: 0px 1px 1px darken(@color--dark, 20%);
+    }
 
-.widget.paypalbuynow .widget.button.paypal {}
+    .style--dark & {
+    	background-color: @color--accent;
+    	border: none;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
+    &:hover {
+    	.style--light & {
+			background-color: darken(@color--accent, 5%);
+			color: @contrast--accent;
+	    }
+
+	    .style--accent & {
+	    	background-color: darken(@color--dark, 5%);
+	    	color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	    	background-color: darken(@color--accent, 5%);
+	    	color: @contrast--accent;
+	    }
+    }
+}
 
 
 /* ===============================
@@ -1336,6 +1732,18 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 	color: @font-swatch5-color;
 	line-height: @font-swatch4-line-height;
 	letter-spacing: @font-swatch4-letter-spacing;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 .widget.signupform fieldset input {
@@ -1348,24 +1756,85 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 	text-indent: 10px;
 	border: 1px solid darken(@color-swatch2, 10%);
 	float: left;
+
+	.style--light & {
+		background-color: @color--light;
+		border-color: darken(@color--light, 10%);
+		color: @contrast--light;
+    }
+
+    .style--accent & {
+    	background-color: @color--light;
+    	border-color: darken(@color--accent, 10%);
+    	color: @contrast--light;
+    }
+
+    .style--dark & {
+    	background-color: @color--light;
+    	border-color: lighten(@color--dark, 10%);
+    	color: @contrast--light;
+    }
+
 	&:hover {
 		border: 1px solid darken(@color-swatch2, 20%);
+
+		.style--light & {
+			border-color: darken(@color--light, 20%);
+	    }
+
+	    .style--accent & {
+	    	border-color: darken(@color--accent, 20%);
+	    }
+
+	    .style--dark & {
+	    	border-color: lighten(@color--dark, 20%);
+	    }
 	}
 }
 
 .widget.signupform fieldset input:focus {
 	outline: none;
 	border: 1px solid darken(@color-swatch2, 25%);
+
+	.style--light & {
+		border-color: darken(@color--light, 25%);
+    }
+
+    .style--accent & {
+    	border-color: darken(@color--accent, 25%);
+    }
+
+    .style--dark & {
+    	border-color: lighten(@color--dark, 25%);
+    }
 }
 
 .widget.signupform button {
-	width: 20%;
 	height: 50px;
 	margin: 0;
-	padding: 0;
+	padding: 0 12px;
 	background-color: @font-swatch7-background-color;
 	text-decoration: none;
 	position: relative;
+
+	.style--light & {
+		background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+        color: @contrast--dark;
+        text-shadow: 0px 1px 1px darken(@color--dark, 20%);
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0px 1px 1px darken(@color--accent, 20%);
+    }
+
 	@media @mobile {
 		width: 100%;
 		margin-bottom: 10px;
@@ -1375,6 +1844,18 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 .widget.signupform button:hover {
 	background-color: @font-swatch7-background-color-hover;
 	cursor: pointer;
+
+	.style--light & {
+		background-color: darken(@color--accent, 5%);
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--dark, 5%);
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--accent, 5%);
+    }
 }
 
 
@@ -1468,9 +1949,34 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 			-moz-border-radius: 50%;
 			border-radius: 50%;
 			cursor: pointer;
+
+			.style--light & {
+				background-color: darken(@color--light, 10%);
+		    }
+
+		    .style--accent & {
+		    	background-color: darken(@color--accent, 10%);
+		    }
+
+		    .style--dark & {
+		    	background-color: lighten(@color--dark, 10%);
+		    }
+
 			&.selected {
 				border: 0;
 				background-color: @color-swatch5;
+
+				.style--light & {
+					background-color: @color--accent;
+			    }
+
+			    .style--accent & {
+			    	background-color: @contrast--accent;
+			    }
+
+			    .style--dark & {
+			    	background-color: @contrast--dark;
+			    }
 			}
 		}
 	}
@@ -1578,7 +2084,10 @@ select {
 .widget.ecomproductslist {
 	width: auto;
 	margin-left: 0;
+
 	.ecom-productslist-products {
+		margin-left: 0;
+		max-width: 100%;
 		
 		// Filter
 		
@@ -1604,6 +2113,18 @@ select {
 						display: block;
 						font-size: bkscale(@font-swatch5-font-size, 0.8);
 						text-align: center;
+
+						.style--light & {
+						    color: @contrast--light;
+						}
+
+						.style--accent & {
+						    color: @contrast--accent;
+						}
+
+						.style--dark & {
+						    color: @contrast--dark;
+						}
 					}
 					select {
 						@media @mobile {
@@ -1618,6 +2139,19 @@ select {
 						margin: 0;
 						padding: 15px;
 						background-color: lighten(@color-swatch2, 70%);
+
+						.style--light & {
+							background-color: @color--light;
+					    }
+
+					    .style--accent & {
+					    	background-color: @color--accent;
+					    }
+
+					    .style--dark & {
+					    	background-color: @color--dark;
+					    }
+
 						@media @tablet {
 							max-width: 600px;
 							margin: 0 auto;
@@ -1698,6 +2232,18 @@ select {
 			color: fade(@color-swatch5, 60%);
 			font-size: bkscale(@font-swatch5-font-size, 0.8);
 			margin: 1em 0;
+
+			.style--light & {
+			    color: fade(@contrast--light, 80%);
+			}
+
+			.style--accent & {
+			    color: fade(@contrast--accent, 80%);
+			}
+
+			.style--dark & {
+			    color: fade(@contrast--dark, 80%);
+			}
 		}
 		
 		// Product Item
@@ -1755,10 +2301,37 @@ select {
 				color: @color-swatch3;
 				border-bottom: 3px solid mix(@color-swatch2, #fff, 6%);
 				padding: 0.5em 0;
+
+				.style--light & {
+					border-color: @color--light;
+				    color: @contrast--light;
+				}
+
+				.style--accent & {
+					border-color: @color--accent;
+				    color: @contrast--accent;
+				}
+
+				.style--dark & {
+					border-color: @color--dark;
+				    color: @contrast--dark;
+				}
 			}
 			// Price
 			.ecom-productlist-price {
 				color: @color-swatch5;
+
+				.style--light & {
+				    color: @contrast--light;
+				}
+
+				.style--accent & {
+				    color: @contrast--accent;
+				}
+
+				.style--dark & {
+				    color: @contrast--dark;
+				}
 			}
 		}
 	}
@@ -1778,8 +2351,21 @@ select {
 	}
 }
 
-.widget.ecomproductslist .ecom-productslist-image-wrap {
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
 	background-position: center;
+
+	.style--light & {
+	    background-color: @color--light!important;
+	}
+
+	.style--accent & {
+	    background-color: @color--accent!important;
+	}
+
+	.style--dark & {
+	    background-color: @color--dark!important;
+	}
 }
 
 .ecom-productslist-title,
@@ -1798,6 +2384,33 @@ select {
 	line-height: @font-swatch4-line-height;
 	letter-spacing: @font-swatch4-letter-spacing;
 	color: @color-swatch5;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
+}
+
+.product-category-items li a {
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 // Basket Summary
@@ -2128,6 +2741,19 @@ select {
 	margin: 0 0 2em;
 	padding: 0 0 1.3em;
 	border-bottom: 1px solid darken(@color-swatch1, 10%);
+
+	.style--light & {
+	    border-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+	    border-color: darken(@color--accent, 10%);
+	}
+
+	.style--dark & {
+	    border-color: lighten(@color--dark, 10%);
+	}
+
 	&:last-child {
 		margin-bottom: 30px;
 	}
@@ -2144,7 +2770,7 @@ select {
 	background-position: center;
 	z-index: 1000;
 	margin-bottom: 20px;
-	@media @mobile {}
+
 	img {
 		display: none;
 	}
@@ -2152,6 +2778,18 @@ select {
 
 .blog-post-title a {
 	color: @color-swatch4;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 .blog-post-summary {
@@ -2174,6 +2812,18 @@ select {
 	line-height: @font-swatch4-line-height;
 	letter-spacing: 1px;
 	color: @font-swatch4-color;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 .blog-list-footer {
@@ -2182,6 +2832,7 @@ select {
 		padding: 6px 10px;
 		color: @color-swatch1;
 		box-shadow: none;
+
 		&:hover {
 			background-color: darken(@color-swatch5, 5%);
 			border-color: @color-swatch3;
@@ -2235,6 +2886,18 @@ select {
 		color: @font-swatch5-color;
 		font-size: @font-swatch5-font-size;
 		font-family: @font-swatch4-font-family;
+
+		.style--light & {
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @contrast--dark;
+		}
 	}
 	input {
 		width: 80%;
