@@ -1,13 +1,9 @@
-/* ===============================
-	 IMPORT CSS
-	 =============================== */
+// IMPORT CSS
 
 @import "@{templateCommon}/basekit-bootstrap.less";
 @import "@{templateLocal}/css/layout-header.less";
 
-/* ===============================
-	 MIXINS
-	 =============================== */
+// MIXINS
 
 .appearance(@appearance: none) {
     -webkit-appearance: @appearance;
@@ -15,9 +11,7 @@
     appearance: @appearance;
 }
 
-/* ===============================
-	 TEMPLATE CSS
-	 =============================== */
+// TEMPLATE CSS
 
 .wrapper {
     max-width: 1600px;
@@ -26,9 +20,7 @@
     position: relative;
 }
 
-/* ===============================
-	 CUSTOM CSS
-	 =============================== */
+// CUSTOM CSS
 
 .main {
     padding: 50px 0px;
@@ -45,12 +37,11 @@ body.edit .widget.extendednavigation {
     bottom: inherit;
 }
 
-/* ===============================
-	 HEADER
-	 =============================== */
+// HEADER
 
 header.bk-header {
     min-height: 85px;
+
     .flex-container {
         @media @tablet {
             -webkit-box-align: initial;
@@ -66,10 +57,12 @@ header.bk-header {
 .widget.feature + .header-wrapper {
     position: relative;
     z-index: 10000;
+
     .bk-header {
         background-color: fade(@color-swatch7, 80%);
         position: absolute;
         bottom: 0;
+
         @media @tablet {
             position: relative;
             background-color: @color-swatch7;
@@ -111,9 +104,7 @@ header.bk-header,
     }
 }
 
-/* ===============================
-	 FOOTER
-	 =============================== */
+// FOOTER
 
 footer.bk-footer {
     padding: 5em 0;
@@ -148,8 +139,10 @@ footer.bk-footer p {
 
 .gdpr-footer {
     background-color: @color-swatch7;
+
     .gdpr-footer__link {
         color: @color-swatch3;
+
         &:hover,
         &:active {
             text-decoration: none;
@@ -158,9 +151,7 @@ footer.bk-footer p {
     }
 }
 
-/* ===============================
-   LANGUAGE SELECTOR
-   =============================== */
+// LANGUAGE SELECTOR
 
 @language-padding: 0.5em;
 @language-line-height: @font-swatch7-line-height;
@@ -176,22 +167,28 @@ footer.bk-footer p {
         box-sizing: content-box;
         width: auto;
     }
+
     &.language-selector--light {
         background-color: @color-swatch1;
+
         @media @mobile {
             box-shadow: none;
         }
     }
+
     &.language-selector--dark {
         background-color: fade(@color-swatch7, 80%);
+
         @media @mobile {
             box-shadow: none;
         }
     }
+
     &.language-selector--dropdown {
         height: auto;
         text-align: left;
     }
+
     .language-selector__inner,
     .language-selector__list,
     .language-selector__item,
@@ -217,22 +214,27 @@ footer.bk-footer p {
         width: 90%;
         margin: 0 auto;
     }
+
     .language-selector.language-selector--horizontal & {
         padding: @language-padding*2 @language-padding 0;
     }
+
     .language-selector.language-selector--dropdown & {
         padding: @language-padding*2 @language-padding;
         width: 90%;
+
         &:before {
             content: "";
             display: block;
             height: @language-line-height;
         }
+
         &:after {
             content: "";
             display: block;
             height: @language-padding*2;
         }
+
         @media @mobile {
             width: 100%;
         }
@@ -245,21 +247,25 @@ footer.bk-footer p {
     .language-selector & {
         min-width: auto;
     }
+
     .language-selector.language-selector--dropdown & {
         box-sizing: border-box;
         margin: @language-padding*2 @language-padding;
         min-width: auto;
         max-width: ~"calc(100% - 1em)";
+
         @media @tablet {
             margin: 0;
             padding: @language-padding*2 @language-padding;
             max-width: 100%;
         }
+
         @media @mobile {
             width: 100%;
             padding: @language-padding*2 5%;
         }
     }
+
     .language-selector.language-selector--dropdown.language-selector--flag & {
         @media @mobile {
             width: auto;
@@ -282,6 +288,7 @@ footer.bk-footer p {
         -moz-transition: 0.2s;
         -ms-transition: 0.2s;
         transition: 0.2s;
+
         .language-selector--horizontal& {
             margin: 0 0 @language-padding*2 @language-padding;
         }
@@ -293,23 +300,28 @@ footer.bk-footer p {
         .language-selector--light&,
         .language-selector--dark& {
             background-color: @font-swatch7-background-color;
+
             &:hover {
                 background-color: @font-swatch7-background-color-hover;
             }
+
             &--current {
                 background-color: darken(@font-swatch7-background-color-hover, 20%);
+
                 &:hover {
                     background-color: @font-swatch7-background-color-hover;
                 }
             }
         }
     }
+
     .language-selector.language-selector--dropdown & {
         .language-selector--light&,
         .language-selector--dark& {
             &,
             &--current {
                 background-color: @font-swatch7-background-color;
+
                 &:hover {
                     background-color: @font-swatch7-background-color-hover;
                 }
@@ -335,6 +347,7 @@ footer.bk-footer p {
                 text-align: center;
             }
         }
+
         &:after {
             .language-selector.language-selector--dropdown & {
                 position: absolute;
@@ -402,9 +415,11 @@ footer.bk-footer p {
         box-sizing: content-box;
         line-height: @language-line-height;
     }
+
     .language-selector.language-selector--flag-text & {
         margin: 0;
     }
+
     .language-selector.language-selector--dropdown.language-selector--flag-text & {
         float: left;
         box-sizing: border-box;
@@ -422,25 +437,31 @@ footer.bk-footer p {
         font-smooth: auto;
         text-rendering: auto;
     }
+
     .language-selector & {
         text-shadow: 0px 1px 1px darken(@color-swatch3, 20%);
     }
+
     .language-selector.language-selector--flag-text & {
         display: inline-block;
         padding: @language-padding 0 @language-padding @language-padding;
     }
+
     .language-selector.language-selector--text &,
     .language-selector.language-selector--flag & {
         padding: @language-padding 0;
     }
+
     .language-selector.language-selector--text & {
         display: block;
     }
+
     .language-selector.language-selector--dropdown & {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
         .language-selector--flag-text& {
             @media only screen and (max-width: 380px) {
                 display: none;
@@ -449,9 +470,7 @@ footer.bk-footer p {
     }
 }
 
-/* ===========================
-	TYPOGRAPHY
-   ======================== */
+// TYPOGRAPHY
 
 h1,
 h2,
@@ -516,14 +535,12 @@ li,
     }
 }
 
-/* ===============================
-	 EXTENDED NAVIGATION
-	 =============================== */
+// EXTENDED NAVIGATION
 
 .widget.extendednavigation {
     display: inline-block;
     vertical-align: middle;
-    //width: 80%;
+    
     li.selected a span {
         border-bottom: 1px solid white;
         padding-bottom: 5px;
@@ -562,6 +579,7 @@ li,
     background-position: right center;
     background-repeat: no-repeat;
     cursor: pointer;
+
     &:after {
         display: none;
     }
@@ -611,13 +629,12 @@ li,
     padding: 0;
 }
 
-/* ===============================
-	 FEATURE
-	 =============================== */
+// FEATURE
 
 .widget.feature .feature-bgimg {
     height: 900px;
     display: table;
+
     .content {
         vertical-align: bottom;
     }
@@ -627,11 +644,13 @@ li,
     height: auto;
     padding-bottom: 140px;
     text-align: right;
+
     .feature-btn {
         float: right;
         display: block;
         width: 100%;
     }
+
     button span {
         padding-right: 8px;
         vertical-align: inherit;
@@ -649,6 +668,7 @@ li,
 .widget.feature h2 {
     display: inherit;
     padding-bottom: 0;
+
     span {
         background-color: fade(@color-swatch7, 80%);
         padding: 10px;
@@ -680,10 +700,7 @@ li,
     cursor: pointer;
 }
 
-/* ===============================
-	 BUTTONS
-	 =============================== */
-
+// BUTTONS
 .widget.button {
     padding: 0;
 }
@@ -753,10 +770,7 @@ a.contentgroup__link {
     margin: 0;
 }
 
-/* ===============================
-	 CONTENT CSS
-	 =============================== */
-
+// CONTENT CSS
 .widget.content {
     padding: 0;
     overflow: hidden;
@@ -794,6 +808,7 @@ a.contentgroup__link {
 .expand .more,
 .expand .less {
     color: @font-swatch7-color;
+
     &:hover {
         color: @font-swatch7-color;
     }
@@ -836,9 +851,7 @@ blockquote p {
     }
 }
 
-/* ===============================
-	IMAGE
-	=============================== */
+// IMAGE
 
 .widget.image .image-title,
 .widget.image .image-description {
@@ -855,36 +868,37 @@ blockquote p {
     }
 }
 
-/* ===============================
-	GALLERY
-	=============================== */
+// GALLERY
 
 .widget.gallery {
     margin: 20px 0 20px -0.5%;
+
     ul li {
         @media @tablet {
             width: 50%;
             padding-bottom: 50%;
         }
+
         @media @mobile {
             width: 100%;
             padding-bottom: 100%;
         }
+
         span.inner {
             .title,
             .description {
-                // Font
-
                 color: @color-swatch1;
                 font-family: @font-swatch4-font-family;
                 letter-spacing: @font-swatch4-letter-spacing;
                 text-align: left;
             }
+
             .title {
                 font-size: 19px;
                 font-weight: 600;
                 line-height: 26px;
             }
+
             .description {
                 font-size: 16px;
                 line-height: 20px;
@@ -906,6 +920,7 @@ blockquote p {
         -moz-transition: all 0.4s ease-out;
         -o-transition: all 0.4s ease-out;
         transition: all 0.4s ease-out;
+
         &:hover {
             .flex-display;
             opacity: 1;
@@ -913,9 +928,7 @@ blockquote p {
     }
 }
 
-/* ===============================
-	 DIVIDER WIDGET
-	 =============================== */
+// DIVIDER WIDGET
 
 .widget.line {
     padding: 20px 0;
@@ -952,9 +965,7 @@ hr.line.align-right {
     margin: 20px 0px 20px auto;
 }
 
-/* ===============================
-	 CLICK TO CALL WIDGET
-	 =============================== */
+// CLICK TO CALL WIDGET
 
 .widget.clicktocall a {
     font-family: @font-swatch5-font-family;
@@ -969,9 +980,7 @@ hr.line.align-right {
     cursor: pointer;
 }
 
-/* ===============================
-	 TWITTER FULL
-	 =============================== */
+// TWITTER FULL
 
 .widget.twitter {
     padding: 0px;
@@ -1081,9 +1090,7 @@ hr.line.align-right {
     }
 }
 
-/* ===============================
-	 CONTACT FORM WIDGET
-	 =============================== */
+// CONTACT FORM WIDGET
 
 .form-group {
     margin-bottom: 1em;
@@ -1232,22 +1239,18 @@ select {
 // Placeholders
 
 ::-webkit-input-placeholder {
-    /* WebKit browsers */
     color: lighten(@color-swatch5, 10%);
 }
 
 :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
     color: lighten(@color-swatch5, 10%);
 }
 
 ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
     color: lighten(@color-swatch5, 10%);
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
     color: lighten(@color-swatch5, 10%);
 }
 
@@ -1388,9 +1391,7 @@ button,
     }
 }
 
-/* ====================================
-	 DROPBOX, PAYPAL, PDF, TWEET, BLOG
-	 =============================== */
+// DROPBOX, PAYPAL, PDF, TWEET, BLOG
 
 .widget.dropbox .b-wrap .btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1438,9 +1439,7 @@ button,
     }
 }
 
-/* ===============================
-	 TWEET THIS WIDGET
-	 =============================== */
+// TWEET THIS WIDGET
 
 .widget.tweet {
     padding: 0px;
@@ -1474,9 +1473,7 @@ button,
     cursor: pointer;
 }
 
-/* ==================================
-	 SOCIAL BAR WIDGET / SOCIAL PROFILE
-	 =============================== */
+// SOCIAL BAR WIDGET / SOCIAL PROFILE
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
@@ -1579,10 +1576,7 @@ button,
     background-image: image("/images/social/socialicons-youtube.png");
 }
 
-/* ===============================
-	 PROFILE WIDGET
-	 =============================== */
-
+// PROFILE WIDGET
 .widget.profile span,
 .widget.profile a,
 .widget.profile ul.twitter p {
@@ -1656,6 +1650,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     height: 50px;
     float: left;
     border: 1px solid darken(@color-swatch2, 10%);
+
     @media @mobile {
         width: 100%;
         margin-bottom: 10px;
@@ -1673,6 +1668,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .widget.profile form fieldset button {
     min-height: 50px;
+
     @media @mobile {
         width: 100%;
         margin-bottom: 10px;
@@ -1688,18 +1684,14 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-/* ===============================
-	 MAP WIDGET
-	 =============================== */
+// MAP WIDGET
 
 .widget.map {
     margin: 20px 0;
     padding: 0px;
 }
 
-/* ===============================
-	 SIGNUP FORM WIDGET
-	 =============================== */
+// SIGNUP FORM WIDGET
 
 .widget.signupform {
     padding: 0px;
@@ -1848,37 +1840,40 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-/* ===============================
-	 SLIDESHOW WIDGET
-	 =============================== */
+// SLIDESHOW WIDGET
 
 .widget.responsiveslideshow {
     .slideshow-image-list,
     .slideshow-widget {
         min-height: 450px;
+
         @media @tablet {
             min-height: 350px;
         }
+
         @media @mobile {
             min-height: 280px;
             height: 280px;
         }
     }
+
     .title,
     .description {
         display: block;
         font-size: 15px;
         padding: 5px 0 5px 10px;
     }
+
     .description {
         padding-top: 0;
         line-height: 1.5;
     }
+
     .content-wrapper {
         background: rgba(0, 0, 0, 0.5);
     }
+
     .slideshow-widget {
-        /* Arrows */
         .btn-prev,
         .btn-next {
             font-size: 0;
@@ -1890,37 +1885,43 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             border-radius: 50%;
+
             @media @mobile {
                 width: 30px;
                 height: 30px;
             }
         }
+
         .btn-prev {
             &:after {
                 content: "\2190";
                 color: #fff;
                 top: 6px;
+
                 @media @mobile {
                     top: 1px;
                 }
             }
         }
+
         .btn-next {
             &:after {
                 content: "\2192";
                 color: #fff;
                 top: 6px;
+
                 @media @mobile {
                     top: 1px;
                 }
             }
         }
-        /* Play Button */
+        
         .btn-play {
             background: rgba(0, 0, 0, 0.5);
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
+
             &:after {
                 color: #fff;
                 letter-spacing: -4px;
@@ -1928,7 +1929,9 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             }
         }
     }
+
     /* Slideshow Controls */
+
     .slideshow-widget-controls {
         .dot {
             width: 10px;
@@ -1989,6 +1992,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     right: 0;
     bottom: 0;
     margin: auto;
+
     @media @mobile {
         width: 30px;
         height: 30px;
@@ -1997,15 +2001,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .widget.responsiveslideshow .slideshow-widget .btn-play:after {
     top: -7px;
+
     @media @mobile {
         top: -12px;
     }
 }
 
-/* ===============================
-	 ECOMMERECE
-	 =============================== */
-
+// ECOMMERECE
 // Shame CSS
 
 .widget.ecomproductslist {
@@ -2020,12 +2022,16 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
         .productlist-filter {
             margin-left: 0;
+
             .productlist-display-form {
                 text-align: center;
+
                 @media @mobile {
                     padding: 0;
                 }
+
                 // Filter Group
+                
                 .form-group {
                     display: inline-block;
                     vertical-align: bottom;
@@ -2055,6 +2061,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                             color: @contrast--dark;
                         }
                     }
+
                     // Search form
                     &.productlist-search {
                         display: flex;
@@ -2087,6 +2094,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                 }
             }
         }
+
         .productlist-item-count {
             text-align: center;
             color: fade(@color-swatch5, 60%);
@@ -2113,15 +2121,22 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             margin-right: 3%;
             margin-bottom: 30px;
             width: 30.9%;
+            
             @media @mobile {
                 margin-bottom: 16px;
             }
+            
+            .responsivecolumns & {
+                margin-bottom: 16px;
+            }
+
             &:nth-child(3n + 4) {
                 margin-right: 0;
                 @media @tablet {
                     margin-right: 2%;
                 }
             }
+
             @media @tablet {
                 &:nth-child(2n + 1) {
                     margin-right: 0;
@@ -2131,10 +2146,17 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                 width: 48.5%;
                 margin-right: 2%;
             }
+
             @media @mobile {
                 width: auto;
                 margin-right: 0;
             }
+
+            .responsivecolumns & {
+                width: auto;
+                margin-right: 0;
+            }
+
             a {
                 display: block;
                 text-decoration: none;
@@ -2174,7 +2196,9 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                     color: @contrast--dark;
                 }
             }
+
             // Price
+
             .ecom-productlist-price {
                 color: @color-swatch5;
 
@@ -2196,6 +2220,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .widget.ecombasket .ecombasket-pull {
     margin: 0 0 15px;
+
     p {
         font-family: @font-swatch7-font-family;
         font-size: @font-swatch7-font-size;
@@ -2203,6 +2228,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         font-weight: @font-swatch7-font-weight;
         color: @font-swatch7-color;
     }
+
     p:before {
         top: 0;
     }
@@ -2273,15 +2299,19 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .widget.ecombasketsummary {
     margin-bottom: 30px;
+
     // Image Wrap
+
     .image-wrap {
         background-position: -10000%;
+
         @media (max-width: 530px) {
             max-width: 130px;
             img {
                 max-width: 100% !important;
             }
         }
+
         @media (max-width: 360px) {
             max-width: 100%;
         }
@@ -2308,6 +2338,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         display: block;
         line-height: 24px;
         color: @color-swatch3;
+
         &:hover {
             text-decoration: underline;
         }
@@ -2317,6 +2348,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
     .basket-summary-quantity {
         margin-top: 8px;
+
         .basket-summary-quantity-text {
             display: block;
             padding: 0;
@@ -2325,11 +2357,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             font-size: 14px;
             line-height: 20px;
         }
+
         .quantity-number {
             background-color: darken(@color-swatch1, 3%);
             padding: 1px 10px;
             font-size: 14px;
         }
+
         button {
             width: 20px;
             height: 20px;
@@ -2343,9 +2377,11 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             line-height: 0;
             font-family: @font-swatch4-font-family;
             color: @color-swatch1;
+
             &:hover {
                 cursor: pointer;
             }
+
             &:focus {
                 outline: none;
             }
@@ -2378,13 +2414,16 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             letter-spacing: 1px;
             color: @font-swatch4-color;
             text-transform: uppercase;
+
             @media @mobile {
                 font-size: 12px;
             }
+
             th {
                 position: relative;
                 left: 20px;
                 text-align: left;
+
                 &:last-child {
                     @media (max-width: 360px) {
                         display: none;
@@ -2397,21 +2436,25 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
         tr td {
             border-bottom: 1px solid darken(@color-swatch1, 10%);
+
             @media (max-width: 360px) {
                 display: table;
                 width: 100%;
                 border-bottom: 0;
             }
+
             &:nth-child(1),
             &:nth-child(2) {
                 padding: 20px;
                 vertical-align: top;
             }
+
             &:nth-child(2) {
                 @media (max-width: 530px) {
                     padding-left: 0;
                 }
             }
+
             &:nth-child(3) {
                 padding: 20px;
                 border-left: 1px solid darken(@color-swatch1, 10%);
@@ -2424,6 +2467,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                     padding-bottom: 0;
                 }
             }
+
             &:nth-child(2),
             &:nth-child(3) {
                 @media (max-width: 360px) {
@@ -2431,6 +2475,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                     border-left: 0;
                 }
             }
+
             &:last-child {
                 @media (max-width: 360px) {
                     padding: 6px 20px;
@@ -2440,6 +2485,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                 }
             }
         }
+
         tr:last-child td:last-child {
             @media (max-width: 360px) {
                 border-top: 0;
@@ -2453,20 +2499,23 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
     .basket-summary-submit {
         margin-bottom: 30px;
+
         &:disabled {
             opacity: 0.3;
         }
+
         &:hover {
             background-color: @color-swatch3;
         }
     }
-    //
+
     .js-shipping-opts {
         border-bottom: 1px solid darken(@color-swatch1, 10%);
         padding-bottom: 20px;
         font-size: 14px;
         line-height: 26px;
         margin-bottom: 20px;
+
         label {
             margin-bottom: 10px;
         }
@@ -2490,6 +2539,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         letter-spacing: @font-swatch4-letter-spacing;
         color: @font-swatch4-color;
     }
+
     .ecom-product-preview-image-wrap {
         text-align: left;
     }
@@ -2499,6 +2549,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .ecom-product-price {
         font-size: 20px;
     }
+
     .ecom-product-variation {
         padding: 4px 0;
         margin-top: 10px;
@@ -2523,6 +2574,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         bottom: -10px;
         line-height: 22px;
     }
+
     .ecom-product-cattag {
         margin: 4px 0 0;
     }
@@ -2532,6 +2584,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .ecom-product-tag-link:after {
         content: ",";
     }
+
     .ecom-product-tag-link:last-child:after {
         display: none;
     }
@@ -2560,9 +2613,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     background-color: darken(@color-swatch3, 5%);
 }
 
-/* ===============================
-	 BLOG
-	 =============================== */
+// BLOG
 
 .blog-post-item {
     margin: 1.5em 0;
@@ -2660,6 +2711,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .blog-list-footer {
     margin: 10px 0 30px;
+
     a {
         padding: 6px 10px;
         color: @color-swatch1;
@@ -2703,6 +2755,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 .blog-post-sharing button {
     padding: 1px 8px;
     box-shadow: none;
+
     &:hover {
         background-color: darken(@color-swatch3, 5%);
     }
@@ -2712,6 +2765,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 .blog-search-form {
     margin-bottom: 30px;
+
     label {
         display: block;
         margin-bottom: 4px;
@@ -2731,26 +2785,31 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             color: @contrast--dark;
         }
     }
+
     input {
         width: 80%;
         height: 50px;
         border: 1px solid darken(@color-swatch2, 10%);
         background-color: @color-swatch2;
         float: left;
+
         @media @mobile {
             width: 100%;
             margin-bottom: 12px;
         }
     }
+
     button {
         margin: 0;
         width: 20%;
         cursor: pointer;
         height: 50px;
         border: 0;
+
         &:hover {
             background-color: @font-swatch7-background-color-hover;
         }
+
         @media @mobile {
             width: 100%;
             margin-bottom: 10px;
@@ -2758,17 +2817,16 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-/* ===============================
-	 MENU
-	 =============================== */
-
+// MENU
 // Menu Sections
 
 .widget.menusections {
     margin: 0 0 30px;
+
     ul {
         padding: 1em !important;
         text-align: center;
+
         li {
             @media @mobile {
                 width: 100%;
@@ -2776,8 +2834,10 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             }
         }
     }
+
     a {
         color: @color-swatch4;
+
         &:hover {
             color: darken(@color-swatch4, 5%);
             text-decoration: none;
@@ -2794,6 +2854,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         border-bottom: 1px solid darken(@color-swatch1, 15%);
         padding-bottom: 30px;
     }
+
     .menu-name,
     .menu-description,
     .menu-note,
@@ -2802,15 +2863,18 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         text-align: center;
         padding-bottom: 0;
     }
+
     .menu-subsection {
         padding: 0;
     }
+
     .menu-item-image-wrap {
         background-size: cover;
         background-repeat: no-repeat;
         height: 180px;
         margin: 0.25em 0 0.75em;
         background-position: center;
+
         img {
             display: none;
         }
@@ -2865,17 +2929,17 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     letter-spacing: @font-swatch7-letter-spacing;
 }
 
-/* ===============================
-	 IPAD WIDTH
-	 =============================== */
+// IPAD WIDTH
 
 @media only screen and (max-width: 768px) {
     .canvas {
         width: 100%;
     }
+
     .main {
         padding: 40px 0px;
     }
+
     .twitter-profile-pic {
         display: none;
     }
@@ -2890,45 +2954,51 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
     .widget.extendednavigation ul li {
         border-bottom: 1px solid fade(@color-swatch1, 35%);
+
         &:last-child {
             border-bottom: 0;
         }
     }
+
     .widget .extendednavigation li {
         width: 100%;
         padding: 0;
+
         &.selected a span {
             border-bottom: none;
         }
     }
+
     .widget.extendednavigation ul li.folder {
         position: relative;
         padding: 0px 30px 0px 12px;
         background-image: image("/images/arrow-down.png");
         background-position: right center;
         -webkit-box-sizing: border-box;
-        /* Safari/Chrome, other WebKit */
         -moz-box-sizing: border-box;
-        /* Firefox, other Gecko */
         box-sizing: border-box;
-        /* Opera/IE 8+ */
+
         span {
             background: none;
         }
     }
+
     .widget.extendednavigation ul li a,
     .widget.extendednavigation ul li.folder .text {
         padding: 12px;
     }
+
     .widget.extendednavigation ul li .text,
     .widget.extendednavigation ul li.folder .text {
         padding-left: 20px;
         background-position: left center;
         background-repeat: no-repeat;
     }
+
     .widget.extendednavigation ul li > ul {
         display: none !important;
     }
+
     .widget.extendednavigation ul li:hover > ul {
         display: block !important;
         width: 100%;
@@ -2936,9 +3006,11 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         padding: 0;
         border-top: 1px solid lighten(@color-swatch7, 15%);
     }
+
     .widget.extendednavigation ul li:hover > ul li {
         padding: 10px 14px;
     }
+
     .widget.extendednavigation ul li:hover > ul li .text,
     .widget.extendednavigation ul li:hover > ul li.folder .text {
         background-image: image("/images/arrow-left-wh.png");
@@ -2965,21 +3037,26 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .widget.contactform fieldset textarea {
         width: 100%;
     }
+
     .widget.contactform fieldset button.btn {
         margin-right: -7px;
     }
+
     .widget.signupform label {
         width: 100%;
         float: left;
     }
+
     .widget.signupform fieldset input {
         width: 100%;
         margin-bottom: 10px;
     }
+
     .widget .extendednavigation ul li {
         padding-top: 0;
         padding-bottom: 0;
     }
+
     .widget .extendednavigation ul li.folder {
         ul {
             top: 37px;
@@ -2987,41 +3064,49 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-/* ===============================
-	 IPHONE WIDTH
-	 =============================== */
+// IPHONE WIDTH
 
 @media only screen and (max-width: 480px) {
     .main {
         padding: 20px 0px;
     }
+
     h1 {
         font-size: bkscale(@font-swatch1-font-size, 0.9);
     }
+
     h2 {
         font-size: bkscale(@font-swatch2-font-size, 0.9);
     }
+
     h3 {
         font-size: bkscale(@font-swatch3-font-size, 0.9);
     }
+
     /* UL ALIGN RIGHT */
+
     .widget.extendednavigation ul.align-right li.folder {
         background-position: 12px center;
         padding-right: 0;
     }
+
     /* FEATURE */
+
     .widget.feature .feature-bgimg {
         height: 500px;
     }
+
     .widget.feature .content {
         height: 500px;
         display: block;
         padding-top: 4em;
     }
+
     .widget.feature h2 {
         font-size: bkscale(@font-swatch8-font-size, 0.5);
         line-height: bkscale(@font-swatch8-line-height, 0.8);
     }
+
     .widget.feature h3 {
         font-size: bkscale(@font-swatch9-font-size, 1);
         margin: 10px 0;
@@ -3033,6 +3118,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .widget.clicktocall {
         padding: 15px 0;
     }
+
     .widget.clicktocall a {
         background-image: image("/images/ic-call.svg");
         background-position: 13px center;
@@ -3047,6 +3133,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         color: @font-swatch7-color;
         text-decoration: none;
     }
+
     .widget.clicktocall a:hover {
         background-image: image("/images/ic-call.svg");
         background-position: 13px center;
@@ -3054,6 +3141,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         background-size: 7px;
         cursor: pointer;
     }
+
     .widget.clicktocall a:active {
         box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.9);
     }
