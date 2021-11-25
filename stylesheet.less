@@ -111,6 +111,37 @@ footer.bk-footer {
     text-align: center;
     background-color: @color-swatch7;
     color: @color-swatch1;
+
+	.widget.profile {
+        .form-group {
+            display: flex;
+            align-items: center;
+			margin: 0 auto;
+			max-width: 900px;
+
+            @media @tablet {
+                display: block;
+            }
+        }
+
+        form fieldset input {
+            min-width: 60%;
+        }
+
+        form button {
+            word-break: break-word;
+            height: auto;
+            width: auto;
+            min-width: 30%;
+            margin: 0 0 0 5px;
+            line-height: 1.25em;
+            min-height: 50px;
+
+            @media @tablet {
+                margin: 5px 0;
+            }
+        }
+	}
 }
 
 footer.bk-footer h1,
@@ -2018,32 +2049,50 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .ecom-productslist-products {
         margin-left: 0;
         max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
         // Filter
 
         .productlist-filter {
-            margin-left: 0;
+            margin: 0 auto;
+            width: 100%;
 
             .productlist-display-form {
-                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                padding: 0;
+                max-width: 800px;
 
                 @media @mobile {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .responsivecolumns & {
+                    margin: 0;
                     padding: 0;
                 }
 
                 // Filter Group
                 
                 .form-group {
-                    display: inline-block;
-                    vertical-align: bottom;
-                    margin-right: 1em;
+                    margin: 0;
                     margin-bottom: 20px;
-                    text-align: left;
+                    min-width: 100%/3;
+                    padding: 0 0.5em;
 
                     @media @mobile {
-                        display: block;
-						margin-right: 0;
-                        margin-bottom: 10px;
+                        min-width: 100%;
+                        margin: 0;
+                    }
+
+                    .responsivecolumns & {
+                        min-width: 100%;
+                        margin: 0;
                     }
 					
                     label {
@@ -2068,9 +2117,10 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                     &.productlist-search {
                         display: flex;
                         text-align: center;
-                        margin: 0;
+                        margin: 0 0.5em;
                         padding: 0;
-                        background-color: lighten(@color-swatch2, 70%);
+                        background-color: #fff;
+                        width: 100%;
 
                         .style--light & {
                             background-color: @color--light;
@@ -2084,13 +2134,22 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                             background-color: @color--dark;
                         }
 
-                        @media @tablet {
-                            max-width: 600px;
-                            margin: 0 auto;
+                        @media @mobile {
+                            min-width: auto;
+                            margin: 30px 0.5em 10px;
+                        }
+
+                        .responsivecolumns & {
+                            min-width: auto;
+                            margin: 30px 0.5em 10px;
                         }
 
                         label {
                             display: none;
+                        }
+
+                        button.btn {
+                            margin-left: 5px;
                         }
                     }
                 }
@@ -2120,42 +2179,23 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
         .ecom-productslist-product {
             margin-left: 0;
-            margin-right: 3%;
+            margin-right: 0;
             margin-bottom: 30px;
-            width: 30.9%;
-            
-            @media @mobile {
-                margin-bottom: 16px;
-            }
-            
-            .responsivecolumns & {
-                margin-bottom: 16px;
-            }
+            width: 100%/3;
+            padding: 0 0.5em;
 
-            &:nth-child(3n + 4) {
+            @media @tablet {
+                width: 100%/2;
                 margin-right: 0;
-                @media @tablet {
-                    margin-right: 2%;
-                }
-            }
-
-            @media @tablet {
-                &:nth-child(2n + 1) {
-                    margin-right: 0;
-                }
-            }
-            @media @tablet {
-                width: 48.5%;
-                margin-right: 2%;
             }
 
             @media @mobile {
-                width: auto;
+                width: 100%;
                 margin-right: 0;
             }
 
             .responsivecolumns & {
-                width: auto;
+                width: 100%;
                 margin-right: 0;
             }
 
@@ -2173,6 +2213,11 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
                 @media @mobile {
                     height: 150px;
+                }
+
+                .responsivecolumns & {
+                    width: auto;
+                    margin-right: 0;
                 }
             }
 
