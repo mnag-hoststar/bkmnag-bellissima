@@ -1,18 +1,13 @@
-// -----------------------------------------------------------------
 // Responsive flex header
-// -----------------------------------------------------------------
-
 
 @bk-logo-right-spacing: 10px;
 @bk-header-wrapper-width: 960px;
 @bk-header-vertical-spacing: 20px;
 @bk-pull-button-height: 18px;
 
-// -----------------------------------------------------------------
 // Latest flexbox model
 
 .flex-container {
-	// Flex parent
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -38,8 +33,6 @@
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-
-	// Layout
 	padding: (@bk-header-vertical-spacing / 2) 0;
 }
 
@@ -57,7 +50,6 @@
 }
 
 .header-right {
-	// Flex child
 	-webkit-box-ordinal-group: 1;
 	-moz-box-ordinal-group: 1;
 	-webkit-order: 0;
@@ -82,7 +74,6 @@
 	}
 }
 
-// -----------------------------------------------------------------
 // Legacy flexbox model only
 
 .flexboxlegacy:not(.flexbox) {
