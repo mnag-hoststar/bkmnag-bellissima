@@ -1,9 +1,12 @@
 // IMPORT CSS
 
 @import "@{templateCommon}/basekit-bootstrap.less";
-@import "@{templateLocal}/css/layout-header.less";
 
+@mobile-large: ~"only screen and (max-width: 530px)";
 @mobile-smaller: ~"only screen and (max-width: 380px)";
+@mobile-smallest: ~"only screen and (max-width: 360px)";
+
+@import "@{templateLocal}/css/layout-header.less";
 
 // MIXINS
 
@@ -2578,7 +2581,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
     .image-wrap {
         background-position: -10000%;
 
-        @media (max-width: 530px) {
+        @media @mobile-large {
             max-width: 130px;
             
             img {
@@ -2586,7 +2589,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             }
         }
 
-        @media (max-width: 360px) {
+        @media @mobile-smallest {
             max-width: 100%;
         }
     }
@@ -2699,7 +2702,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
                 text-align: left;
 
                 &:last-child {
-                    @media (max-width: 360px) {
+                    @media @mobile-smallest {
                         display: none;
                     }
                 }
@@ -2711,7 +2714,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         tr td {
             border-bottom: 1px solid darken(@color-swatch1, 10%);
 
-            @media (max-width: 360px) {
+            @media @mobile-smallest {
                 display: table;
                 width: 100%;
                 border-bottom: 0;
@@ -2724,7 +2727,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             }
 
             &:nth-child(2) {
-                @media (max-width: 530px) {
+                @media @mobile-large {
                     padding-left: 0;
                 }
             }
@@ -2737,21 +2740,21 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
             // Responsive
 
             &:nth-child(1) {
-                @media (max-width: 360px) {
+                @media @mobile-smallest {
                     padding-bottom: 0;
                 }
             }
 
             &:nth-child(2),
             &:nth-child(3) {
-                @media (max-width: 360px) {
+                @media @mobile-smallest {
                     padding: 0 20px 0;
                     border-left: 0;
                 }
             }
 
             &:last-child {
-                @media (max-width: 360px) {
+                @media @mobile-smallest {
                     padding: 6px 20px;
                     margin: 20px 0 0;
                     border-bottom: 1px solid darken(@color-swatch1, 10%);
@@ -2761,7 +2764,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
         }
 
         tr:last-child td:last-child {
-            @media (max-width: 360px) {
+            @media @mobile-smallest {
                 border-top: 0;
                 margin-top: 0;
                 padding-top: 0;
