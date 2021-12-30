@@ -1129,6 +1129,47 @@ tr:last-child td {
 				}
 			}
 
+			// Links and Folder
+
+			a,
+			&.folder .text {
+				display: block;
+			
+				&:hover {
+					color: @font-swatch6-color-hover;
+					text-decoration: none;
+				}
+			}
+			
+			&.folder {
+				padding-right: 15px;
+				background-image: image("/images/nav-arrow.png");
+				background-position: right center;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				
+				&:hover {
+					background-color: @color-swatch7;
+				}
+			
+				&:after {
+					display: none;
+				}
+			}
+		
+			&.selected a span {
+				border-bottom: 1px solid white;
+				padding-bottom: 5px;
+			}
+		}
+	
+		&.align-right li.folder {
+			@media @mobile {
+				background-position: 12px center;
+				padding-right: 0;
+			}
+		}
+	}
 }
 
 // FEATURE
