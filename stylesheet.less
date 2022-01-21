@@ -2785,6 +2785,66 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 
 // E-COMMERCE
 
+// Categories
+
+.widget.ecomcategorieslist {
+	ul.product-category-items {
+		list-style: none;
+		padding: 0 10px;
+		margin: 0 auto 1em;
+		display: flex;
+		max-width: 800px;
+		flex-wrap: wrap;
+
+		@media @mobile {
+			padding: 0;
+		}
+
+		.responsivecolumns & {
+			padding: 0;
+		}
+
+		li {
+			width: 100%/3;
+			padding: 5px 10px;
+
+			@media @tablet {
+				width: 100%/2;
+			}
+
+			@media @mobile {
+				width: 100%;
+				padding: 5px 0;
+			}
+
+			.responsivecolumns & {
+				width: 100%;
+				padding: 5px 0;
+			}
+
+			a {
+				.style--light & {
+					color: fade(@contrast--light, 80%);
+				}
+			
+				.style--accent & {
+					color: fade(@contrast--accent, 80%);
+				}
+			
+				.style--dark & {
+					color: fade(@contrast--dark, 80%);
+				}
+				
+				span {
+					padding-left: 0.25em;
+				}
+			}
+		}
+	}
+}
+
+// Product List
+
 .widget.ecomproductslist,
 .widget.ecomfeaturedproducts {
 	width: auto;
@@ -3036,22 +3096,6 @@ footer.bk-footer .widget.profile .bk-profile-socialicons span a {
 .ecom-featuredproducts-title,
 .ecom-product-title {
 	font-size: 24px;
-}
-
-// Product Categories
-
-.product-category-items li a {
-	.style--light & {
-		color: fade(@contrast--light, 80%);
-	}
-
-	.style--accent & {
-		color: fade(@contrast--accent, 80%);
-	}
-
-	.style--dark & {
-		color: fade(@contrast--dark, 80%);
-	}
 }
 
 // Basket
