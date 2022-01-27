@@ -1247,16 +1247,7 @@ form.blog-search-form .form-group button {
 	} 
 }
 
-// DROPBOX, TWEET, CLICK TO CALL, PAYPAL BUTTON
-
-.widget.tweet,
-.widget.dropbox,
-.widget.paypalbuynow,
-.widget.filedownload,
-.widget.clicktocall,
-.contentgroup__link {
-	margin: 0;
-}
+// Image Buttons
 
 .widget.tweet a,
 .widget.dropbox button,
@@ -1268,53 +1259,6 @@ form.blog-search-form .form-group button {
 		background-position: 1em;
 		background-size: 1.5em;
 		padding-left: 3.5em;
-	}
-}
-
-.widget.tweet a,
-.widget.dropbox button,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.filedownload .btn,
-.widget.clicktocall a,
-.widget.socialicons span a,
-.blog-list-footer a,
-.productlist-search .btn {
-	.style--light & {
-		background-color: @color--accent;
-		border: none;
-		color: @contrast--accent;
-		text-shadow: 0px 1px 1px darken(@color--accent, 20%);
-	}
-
-	.style--accent & {
-		background-color: @color--dark;
-		border: none;
-		color: @contrast--dark;
-		text-shadow: 0px 1px 1px darken(@color--dark, 20%);
-	}
-
-	.style--dark & {
-		background-color: @color--accent;
-		border: none;
-		color: @contrast--accent;
-		text-shadow: 0px 1px 1px darken(@color--accent, 20%);
-	}
-
-	&:hover {
-		.style--light & {
-			background-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
-		}
-
-		.style--accent & {
-			background-color: darken(@color--dark, 5%);
-			color: @contrast--dark;
-		}
-
-		.style--dark & {
-			background-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
-		}
 	}
 }
 
@@ -1579,56 +1523,6 @@ hr.line {
 	
 	&.align-right {
 		margin: 20px 0px 20px auto;
-	}
-}
-
-// CLICK TO CALL
-
-.widget.clicktocall {
-	@media @mobile {
-		padding: 15px 0;
-	}
-
-	a {
-		font-family: @font-swatch5-font-family;
-		font-weight: @font-swatch5-font-weight;
-		color: @font-swatch5-color;
-		letter-spacing: @font-swatch5-letter-spacing;
-		font-size: @font-swatch5-font-size;
-		text-decoration: none;
-
-		@media @mobile {
-			background-image: image("/images/ic-call.svg");
-			background-position: 13px center;
-			background-repeat: no-repeat;
-			background-size: 7px;
-			margin: 0.5em 0em;
-			padding: 12px 14px 12px 34px;
-			background-color: @font-swatch7-background-color;
-			font-family: @font-swatch7-font-family;
-			font-weight: @font-swatch7-font-weight;
-			letter-spacing: @font-swatch7-letter-spacing;
-			color: @font-swatch7-color;
-			text-decoration: none;
-		}
-
-		&:hover {
-			cursor: pointer;
-
-			@media @mobile {
-				background-image: image("/images/ic-call.svg");
-				background-position: 13px center;
-				background-repeat: no-repeat;
-				background-size: 7px;
-				cursor: pointer;
-			}
-		}
-
-		&:active {
-			@media @mobile {
-				box-shadow: inset 0 0 6px fade(@color-swatch1, 90%);
-			}
-		}
 	}
 }
 
