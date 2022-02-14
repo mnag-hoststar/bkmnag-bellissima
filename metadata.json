@@ -1,15 +1,23 @@
 {
-    "name":"Bellissima",
-    "thumbnail":"thumbnail.png",
-    "screenshot":"bellissima-screenshot.jpg",
-    "templateType":"standard",
+    "name": "Bellissima",
+    "thumbnail": "images/thumbnail.png",
+    "screenshot": "images/screenshot.jpg",
+    "templateType": "standard",
     "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
-    "en": ["fullscreen", "dark", "photography", "modern", "stylish", "agency", "magazine", "creative", "elegant", "professional", "sophisticated", "media", "sans-serif"],
-    "es": ["pantalla completa", "oscuro", "fotografico", "moderno", "estilo", "agencia", "revista", "creativo", "elegante", "profesional", "sofisticado", "comunicacion", "sans-serif"],
-    "br": ["expandido", "escuro", "fotografia", "moderno", "estilo", "agência", "revista", "criativo", "elegante", "profissional", "sofisticado", "mídia", "sans-serif"]
+        "en": ["fullscreen", "dark", "photography", "modern", "stylish", "agency", "magazine", "creative", "elegant", "professional", "sophisticated", "media", "sans-serif"],
+        "es": ["pantalla completa", "oscuro", "fotografico", "moderno", "estilo", "agencia", "revista", "creativo", "elegante", "profesional", "sofisticado", "comunicacion", "sans-serif"],
+        "br": ["expandido", "escuro", "fotografia", "moderno", "estilo", "agência", "revista", "criativo", "elegante", "profissional", "sofisticado", "mídia", "sans-serif"]
     },
+    "images":[
+        "images/gallery/gallery-image--1.jpg",
+        "images/gallery/gallery-image--2.jpg",
+        "images/gallery/gallery-image--3.jpg",
+        "images/gallery/gallery-image--4.jpg",
+        "images/gallery/gallery-image--5.jpg",
+        "images/gallery/gallery-image--6.jpg"
+    ],
     "colorSwatches":
     {
         "Swatch 1": {
