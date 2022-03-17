@@ -314,13 +314,13 @@ footer.bk-footer {
 		width: 90%;
 
 		&:before {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-line-height;
 		}
 
 		&:after {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-padding*2;
 		}
@@ -425,7 +425,7 @@ footer.bk-footer {
 		&:before {
 			.language-selector.language-selector--dropdown & {
 				position: absolute;
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: -1px;
 				margin-top: -(@language-line-height / 4);
@@ -441,7 +441,7 @@ footer.bk-footer {
 		&:after {
 			.language-selector.language-selector--dropdown & {
 				position: absolute;
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: 0;
 				margin-top: -(@language-line-height / 4);
@@ -625,28 +625,26 @@ li,
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @font-swatch5-color;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @font-swatch5-color;
-		
-			.style--light & {
-				color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -697,6 +695,7 @@ code {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -1002,6 +1001,8 @@ tr:last-child td {
 			// Folder Arrow
 
 			> .text {
+				word-break: break-word;
+				
 				&:after {
 					content: '';
 					display: block;
@@ -1205,7 +1206,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1297,11 +1298,12 @@ form.blog-search-form .form-group button,
 .widget.dropbox button span,
 .widget.filedownload button.btn {
 	&:before {
-		float: left;
-		padding-right: 0.5em;
+        position: relative;
+        top: 0.1em;
+		padding-right: 0.25em;
 		background-image: none;
 		font-family:'FontAwesome';
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 }
 
@@ -1419,7 +1421,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -1883,6 +1885,8 @@ select {
 		cursor: pointer;
 		padding-left: 2em;
 		margin-bottom: 0;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		font-size: @font-swatch5-font-size;
 		word-break: break-word;
 		text-align: left;
 		text-transform: none;
@@ -1904,7 +1908,7 @@ select {
 			font-family: @font-swatch5-font-family;
 			font-weight: @font-swatch5-font-weight;
 			font-size: @font-swatch5-font-size;
-			line-height: @font-swatch5-line-height;
+			line-height: floor(@font-swatch5-line-height*0.8+2);
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
 			
@@ -1912,7 +1916,7 @@ select {
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -1920,7 +1924,6 @@ select {
 
 		&:before {
 			min-width: 0;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
@@ -1954,7 +1957,6 @@ select {
 			border-radius: 50%;
 			background-color: @font-swatch7-background-color;
 			border: 1px solid @font-swatch7-background-color;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			transform: scale(50%);
 
@@ -1978,7 +1980,7 @@ select {
 	.label--checkbox,
 	label[for*="input--terms"] {
 		&:after {
-			margin-top: floor(@font-swatch5-line-height*-0.2+1);
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
 			height: floor(@font-swatch5-line-height*1.2);
 			border: 1px solid transparent;
 			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
@@ -2173,7 +2175,7 @@ select {
 // SOCIAL BAR / SOCIAL PROFILE
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	display: inline-block;
 	padding: 9px 0;
 	font-size: 1em;
@@ -2516,7 +2518,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
 		.btn-prev {
 			&:after {
-				content: "\2190";
+				content: '\2190';
 				color: @font-swatch7-color;
 				top: 6px;
 
@@ -2528,7 +2530,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
 		.btn-next {
 			&:after {
-				content: "\2192";
+				content: '\2192';
 				color: @font-swatch7-color;
 				top: 6px;
 
@@ -2815,6 +2817,10 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	width: 100%/3;
 	padding: 0 0.5em;
 
+	a:hover {
+		text-decoration: none;
+	}
+
 	@media @tablet {
 		width: 100%/2;
 		margin-right: 0;
@@ -2853,6 +2859,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 		width: auto;
 		margin-right: 0;
 	}
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Title
@@ -3175,12 +3188,19 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 		.ecom-product-vartitle,
 		.ecom-product-category,
 		.ecom-product-tag {
+			display: flex;
+			flex-wrap: wrap;
 			font-family: @font-swatch4-font-family;
 			font-size: 15px;
 			font-weight: @font-swatch4-font-weight;
 			line-height: @font-swatch4-line-height;
 			letter-spacing: @font-swatch4-letter-spacing;
 			color: @font-swatch4-color;
+
+			&:after {
+				content: ':\00a0';
+				order: 0;
+			}
 		}
 	
 		.ecom-product-preview-image-wrap {
@@ -3210,28 +3230,6 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 			background-size: inherit;
 		}
 	
-		// Product Category Info
-	
-		.ecom-product-category {
-			position: relative;
-			bottom: -10px;
-			line-height: 22px;
-		}
-	
-		.ecom-product-cattag {
-			margin: 4px 0 0;
-		}
-	
-		// Category Separation
-	
-		.ecom-product-tag-link:after {
-			content: ",";
-		}
-	
-		.ecom-product-tag-link:last-child:after {
-			display: none;
-		}
-	
 		// Product Description
 	
 		.ecom-product-long-description {
@@ -3245,6 +3243,10 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 		}
 	
 		.btn {
+			margin: 20px 0 0;
+			text-align: center;
+			min-width: 250px;
+
 			&:hover {
 				background-color: darken(@color-swatch3, 5%);
 				text-decoration: none;
@@ -3263,6 +3265,47 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
 			&:before {
 				float: none;
+			}
+		}
+	}
+
+	.ecom-product-cattag {
+		margin: 0;
+		padding: 0;
+	
+		// Product Category Info
+	
+		.ecom-product-category {
+			position: relative;
+			bottom: -10px;
+			line-height: 22px;
+		}
+	
+		.ecom-product-cattag {
+			margin: 4px 0 0;
+		}
+
+		.ecom-product-category,
+		.ecom-product-tag {
+			word-break: break-word;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			margin: 0 0 20px;
+			font-weight: 600;
+		}
+
+		.store-category-link,
+		.ecom-product-tag-link {
+			font-weight: 300;
+			order: 1;
+
+			&:after {
+				content: ',\00a0';
+			}
+
+			&:last-child::after {
+				content: none;
 			}
 		}
 	}
@@ -3392,12 +3435,12 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
 // Category Separation
 
-.blog-post-tag a {
-    color: @color-swatch3;
-}
+.blog-post-tag {
+    content: ',\00a0';
 
-.blog-post-tag a:after {
-    content: ",";
+	a {
+   		color: @color-swatch3;
+	}
 }
 
 // Sharing Buttons
@@ -3474,7 +3517,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
     &:before,
     &:after {
-        content: " ";
+        content: ' ';
         display: table;
     }
     
