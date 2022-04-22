@@ -4,27 +4,25 @@
 
 <section>
     {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"GO TO GALLERY","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
-    <div class="header-wrapper clearfix">
+    <div class="header-wrapper">
         <header class="bk-header">
-            <div class="wrapper clearfix">
-                <div class="flex-container">
-                    <div class="brand">
-                        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-                        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-                    </div>
-                    {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+            <div class="wrapper">
+                <div class="brand">
+                    {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
                 </div>
+                {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
             </div>
         </header>
     </div>
 </section>
 
-<div class="main wrapper clearfix">
+<div class="main wrapper">
     {{zone('main')|raw}}
 </div>
 
 <footer class="bk-footer">
-    <div class="wrapper clearfix">
+    <div class="wrapper">
         {{widget('content', 'footercolumn1content1', {"content":"<p>CONTACTOS</p>"})|raw}}        
         {{widget('content', 'footercolumn1content2', {"content":"<h2>LOREM IPSUM ALAM YOU?</h2>"})|raw}}       
         {{widget('profile', 'footercolumn1profileemail', { 'profileType':'email', 'email':'profile'})|raw}}
