@@ -1140,6 +1140,11 @@ footer.bk-footer {
 						> a {
 							display: block;
 							padding: 0;
+
+							.text {
+								overflow: visible;
+								word-break: break-word;
+							}
 						}
 
 						&:first-child {
@@ -1309,6 +1314,7 @@ form.blog-search-form .form-group button,
 	border: none;
 	min-width: 100px;
 	min-height: 40px;
+	height: auto !important;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-weight: @font-swatch7-font-weight;
@@ -2983,7 +2989,8 @@ select {
 
 .widget.ecomproductslist .ecom-productslist-product,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-product,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap.products-2 .ecom-featuredproducts-product {
 	margin-left: 0;
 	margin-right: 0;
 	margin-bottom: 3em;
