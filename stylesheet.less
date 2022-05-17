@@ -972,6 +972,14 @@ footer.bk-footer {
 		}
 	}
 
+	.extendednavigation {
+		margin: 0 -1em;
+		
+		@media @tablet {
+			margin: 0;
+		}
+	}
+
 	// Mobile Menu
 
 	a.pull {
@@ -1049,7 +1057,7 @@ footer.bk-footer {
 			&.folder .text {
 				position: relative;
 				display: block;
-				padding: 10px 20px;
+				padding: 10px 1em;
 				line-height: 1.6em;
 			}
 			
@@ -1075,7 +1083,7 @@ footer.bk-footer {
 				}
 			
 				> .text {
-					padding-right: 3em;
+					padding-right: 2.5em;
 					word-break: break-word;
 		
 					// Folder Arrow
@@ -1083,7 +1091,7 @@ footer.bk-footer {
 					&:after {
 						content: '';
 						position: absolute;
-						right: 20px;
+						right: 1em;
 						top: 50%;
 						margin-top: -0.4em;
 						height: 0.4em;
@@ -1298,6 +1306,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1314,7 +1323,7 @@ form.blog-search-form .form-group button,
 	border: none;
 	min-width: 100px;
 	min-height: 40px;
-	height: auto !important;
+	height: auto;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-weight: @font-swatch7-font-weight;
@@ -1496,7 +1505,8 @@ blockquote {
 		background-color: darken(@color--dark, 5%);
 	}
 
-	&:before {
+	&:before,
+	&:after {
 		display: none;
 	}
 
@@ -1952,7 +1962,8 @@ input,
 textarea,
 select {
 	width: 100%;
-	height: 40px;
+	min-height: 40px;
+    height: auto !important;
 	padding: 0;
 	background-color: @color-swatch2;
 	font-family: @font-swatch5-font-family;
@@ -2016,7 +2027,7 @@ select {
 // Textarea
 
 textarea {
-	height: 100px;
+	min-height: 100px;
 	width: 100%;
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
@@ -2443,9 +2454,7 @@ select {
 
 	span {
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
@@ -2453,6 +2462,7 @@ select {
 			height: 40px;
 			min-height: 40px;
 			min-width: 40px;
+			line-height: 40px;
 			text-indent: 0;
 			font-size: 0;
 
@@ -2740,6 +2750,8 @@ select {
 	}
 	
 	.slideshow-widget-controls {
+		margin-bottom: 20px;
+		
 		.dot {
 			width: 8px;
 			height: 8px;
