@@ -1347,7 +1347,8 @@ button.button,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
 .blog-post-more-link a,
-.productlist-clear-search {
+.productlist-clear-search,
+.blog-list-footer a.blog-post-pagination-page {
 	display: inline-block;
 	margin: 0;
 	padding: 7px 20px;
@@ -3506,15 +3507,6 @@ select {
     padding-bottom: 0;
 }
 
-.blog-list-footer {
-	margin-bottom: 2em;
-	text-align: center;
-
-	.blog-post-pagination-page {
-		margin: 1em;
-	}
-}
-
 // Metadata
 
 .blog-post-metadata {
@@ -3547,17 +3539,11 @@ select {
 
 .blog-list-footer {
     margin: 10px 0 30px;
+	margin-bottom: 2em;
+	text-align: center;
 
-    a {
-        padding: 6px 10px;
-        color: @color-swatch1;
-        box-shadow: none;
-
-        &:hover {
-            background-color: darken(@color-swatch5, 5%);
-            border-color: @color-swatch3;
-            color: @color-swatch4;
-        }
+    a.blog-post-pagination-page {
+		margin: 0 1em;
     }
 }
 
